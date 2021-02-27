@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% include "meta.njk" %}
+    <link rel="sitemap" type="application/xml" title="Eleventy Starter" href="/sitemap.xml">
+    <link rel="manifest" href="/meta/site.webmanifest.json">
+    <link rel="stylesheet" href="/assets/main.css" />
+  </head>
+  <body>
+    <main tabindex="-1" id="main-content">
+      {{ content | safe }}
+    </main>
+    <script>const lazyLoad = new LazyLoad();</script>
+    {% if netlifyIdentity %}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", (user) => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+    {% endif %}
+    <script src="/assets/main.js" type="module" async></script>
+  </body>
+</html>
