@@ -1,0 +1,21 @@
+$font-sans: "DM Sans", sans-serif;
+
+// Font weight
+$weight-light: 300;
+$weight-regular: 400;
+$weight-bold: 700;
+
+// Fluid typography
+$fluid-target: 5vw;
+$fluid-min: 1rem;
+$fluid-max: 1.3rem;
+
+// Line leading
+$leading-loose: 1.7;
+$leading-tight: 1.3;
+$leading-flat: 1.1;
+
+// Line length
+$length-short: 65ch;
+$length-normal: 75ch;
+$length-long: 85ch;

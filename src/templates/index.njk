@@ -1,0 +1,25 @@
+---
+layout: default.njk
+netlifyIdentity: true
+title: Eleventy Starter
+description: This is the home page meta description
+heroSection:
+  heading: Test
+  paragraph: I'm baby ethical squid glossier, pour-over humblebrag pickled tilde. Vaporware DIY meh, green
+    juice prism tacos 8-bit offal. Fam succulents shaman edison bulb bicycle rights 3 wolf moon, +1 williamsburg
+    lumbersexual air plant semiotics cray dreamcatcher. Mustache humblebrag tbh twee hashtag stumptown food truck lo-fi.
+    Food truck franzen banh mi shaman, dreamcatcher pop-up pickled sartorial four dollar toast keytar gluten-free irony
+    seitan vinyl.Marfa bitters af, keffiyeh readymade helvetica letterpress ennui migas cray yr authentic edison bulb.
+    Umami cold-pressed cloud bread, raw denim fixie banjo artisan cray. Man bun flannel bespoke lo-fi, taxidermy retro
+    succulents air plant lyft austin. Helvetica wayfarers meggings cold-pressed cliche.
+featuredImage:
+  src: ./src/images/placeholder.jpg
+  alt: This is alt text
+---
+
+<div class="flow">
+  <h1>{{ heroSection.heading }}</h1>
+  <p>{{ heroSection.paragraph }}</p>
+  <a href="/admin">Go to Admin</a>
+  <figure>{% image featuredImage.src, featuredImage.alt %}</figure>
+</div>  
