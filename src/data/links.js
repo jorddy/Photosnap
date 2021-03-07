@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   siteLinks: [
     {
       name: "home",
@@ -21,17 +21,14 @@ module.exports = {
     {
       name: "Facebook",
       url: "https://www.facebook.com",
-      icon: "FaFacebookSquare",
     },
     {
       name: "Youtube",
       url: "https://www.youtube.com",
-      icon: "FaYoutube",
     },
     {
       name: "Twitter",
       url: "https://www.twitter.com",
-      icon: "FaTwitter",
     },
     {
       name: "Pinterest",
@@ -41,7 +38,6 @@ module.exports = {
     {
       name: "Instagram",
       url: "https://www.instagram.com",
-      icon: "FaInstagram",
     },
   ],
 };

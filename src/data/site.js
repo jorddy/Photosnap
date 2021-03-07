@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: "Photosnap",
   description:
     "Photosnap is a website that allows photographers to share to turn their photographic moments into stories and share them with the world",
