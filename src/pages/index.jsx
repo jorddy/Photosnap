@@ -9,7 +9,7 @@ export default function Home() {
         src={`https://images.prismic.io/photosnap/33413a67-c14a-48db-b404-12e557daf032_apple-touch-icon.png?auto=compress,format`}
         alt="title"
         width={300}
-        height={300}
+        height={299}
       />
       <Image
         src={`https://images.prismic.io/photosnap/33413a67-c14a-48db-b404-12e557daf032_apple-touch-icon.png?auto=compress,format`}
