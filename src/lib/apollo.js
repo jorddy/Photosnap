@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 export const client = new ApolloClient({
-  uri: "https://photosnap.prismic.io/graphql",
+  uri: process.env.PRISMIC_ENDPOINT,
   cache: new InMemoryCache(),
 });
