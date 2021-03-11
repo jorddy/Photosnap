@@ -1,0 +1,1 @@
+{"ast":null,"code":"export default {\n  title: \"Photosnap\",\n  description: \"Photosnap is a website that allows photographers to share to turn their photographic moments into stories and share them with the world\",\n  url: \"https://www.photosnap-web.netlify.app\",\n  socialImage: \"/social-share.png\"\n};","map":null,"metadata":{},"sourceType":"module"}
