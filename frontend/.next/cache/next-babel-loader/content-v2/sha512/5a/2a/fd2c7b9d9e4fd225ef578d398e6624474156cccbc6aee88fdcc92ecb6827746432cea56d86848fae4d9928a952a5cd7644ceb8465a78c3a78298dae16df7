@@ -1,1 +1,0 @@
-{"ast":null,"code":"import sanityClient from \"@sanity/client\";\nexport const client = sanityClient({\n  projectId: process.env.SANITY_ID,\n  dataset: process.env.SANITY_DATASET,\n  useCdn: true\n});","map":null,"metadata":{},"sourceType":"module"}
