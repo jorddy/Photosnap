@@ -1,35 +1,7 @@
 import Head from "next/head";
-import { gql, useQuery } from "@apollo/client";
 
-export default function Seo({ title, description, route, socialImage }) {
-  const { loading, error, data } = useQuery(gql`
-    query getSiteMetadata {
-      allConfigs {
-        edges {
-          node {
-            site_name
-            site_description
-            site_social_image
-            site_url {
-              ... on _ExternalLink {
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error</p>;
-
-  const {
-    site_name,
-    site_description,
-    site_social_image,
-    site_url,
-  } = data.allConfigs.edges[0].node;
+export default function Seo({ title, description, route, socialImage, data }) {
+  const { site_name, site_description, site_social_image, site_url } = data;
 
   return (
     <Head>

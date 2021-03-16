@@ -6,12 +6,12 @@ import {
   FaInstagram,
 } from "react-icons/fa";
 
-export default function Social({ content }) {
-  const facebook = content[0].platform_link.url;
-  const youtube = content[1].platform_link.url;
-  const twitter = content[2].platform_link.url;
-  const pinterest = content[3].platform_link.url;
-  const instagram = content[4].platform_link.url;
+export default function Social({ data }) {
+  const facebook = data[0].platform_link.url;
+  const youtube = data[1].platform_link.url;
+  const twitter = data[2].platform_link.url;
+  const pinterest = data[3].platform_link.url;
+  const instagram = data[4].platform_link.url;
 
   return (
     <ul>

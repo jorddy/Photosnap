@@ -1,1 +1,9 @@
-// TODO add typography variables
+$typography: (
+  font: '"DM Sans", sans-serif',
+  weight: (
+    light: 300,
+    regular: 400,
+    bold: 700,
+  ),
+  leading: (),
+);

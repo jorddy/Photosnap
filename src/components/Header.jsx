@@ -3,45 +3,15 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import Button from "./Button";
-import { gql, useQuery } from "@apollo/client";
 
-export default function Header() {
+export default function Header({ data }) {
   const [click, setClick] = useState(false);
 
   const handleClick = () => {
     setClick(!click);
   };
 
-  const { loading, error, data } = useQuery(gql`
-    query getMainNavigationData {
-      allSettingss {
-        edges {
-          node {
-            navigation_logo
-            page_links {
-              page_name
-            }
-            button_label
-            button_link {
-              ... on Pricing {
-                meta_title
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error</p>;
-
-  const {
-    navigation_logo,
-    page_links,
-    button_label,
-    button_link,
-  } = data.allSettingss.edges[0].node;
+  const { navigation_logo, page_links, button_label, button_link } = data;
 
   return (
     <header className="navbar">
@@ -64,7 +34,7 @@ export default function Header() {
         </ul>
         <Button
           content={button_label}
-          link={`/${button_link.meta_title.toLowerCase()}`}
+          link={`/${button_link.slug}`}
           style="btn_main"
         />
         <button onClick={handleClick} className="btn_main">
