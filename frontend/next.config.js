@@ -1,8 +1,7 @@
 module.exports = {
   target: "serverless",
   images: {
-    loader: "imgix",
-    path: "",
+    domains: ["cdn.sanity.io"],
   },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
