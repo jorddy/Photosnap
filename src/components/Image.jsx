@@ -1,33 +1,16 @@
-import { useState, useEffect } from "react";
-import Imgix from "react-imgix";
+import Image from "next/image";
 
-export default function Image({ metadata }) {
-  const [loaded, setLoaded] = useState(false);
+export default function NextImage({ metadata }) {
   const { dimensions, url, alt } = metadata;
 
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
+  const src = url.replace("?auto=compress,format", "");
 
   return (
-    <>
-      {loaded ? (
-        <Imgix
-          src={url}
-          width={dimensions.width}
-          height={dimensions.height}
-          imgixParams={{ auto: "format", usm: 10 }}
-          htmlAttributes={{ alt: `${alt}`, loading: "lazy", decoding: "async" }}
-        />
-      ) : (
-        <Imgix
-          src={url}
-          width={dimensions.width}
-          height={dimensions.height}
-          imgixParams={{ auto: "format", q: 1, blur: 500 }}
-          htmlAttributes={{ alt: `${alt}`, loading: "lazy", decoding: "async" }}
-        />
-      )}
-    </>
+    <Image
+      src={src}
+      alt={alt}
+      width={dimensions.width}
+      height={dimensions.height}
+    />
   );
 }

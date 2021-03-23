@@ -1,8 +1,7 @@
 module.exports = {
   target: "serverless",
   images: {
-    loader: "imgix",
-    path: "",
+    domains: ["images.prismic.io", "photosnap.cdn.prismic.io"],
   },
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
