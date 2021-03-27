@@ -1,4 +1,3 @@
-// TEMPORARY INDEX UNTIL DYNAMIC PAGE ROUTES
 import SEO from "components/Seo";
 import Layout from "components/Layout";
 import Image from "components/Image";
