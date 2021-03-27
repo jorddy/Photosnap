@@ -1,27 +1,28 @@
-import SEO from "../components/Seo";
-import Layout from "../components/Layout";
-import Image from "../components/Image";
-import { client } from "../lib/prismic";
+// TEMPORARY INDEX UNTIL DYNAMIC PAGE ROUTES
+import SEO from "components/Seo";
+import Layout from "components/Layout";
+import Image from "components/Image";
+import { client } from "lib/prismic";
 import Prismic from "@prismicio/client";
 
-export default function Home({ data }) {
+export default function Home({ global }) {
   return (
-    <Layout data={data.body}>
-      <SEO data={data} />
-      <h2>Hello world</h2>
-      <Image metadata={data.site_social_image} />
+    <Layout data={global}>
+      <SEO data={global} />
+      <h1>Content</h1>
+      <Image metadata={global.site_social_image} />
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const { results } = await client.query(
+  const settings = await client.query(
     Prismic.predicates.at("document.type", "setting")
   );
 
   return {
     props: {
-      data: results[0].data,
+      global: settings.results[0].data,
     },
   };
 }

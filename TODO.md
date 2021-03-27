@@ -1,0 +1,6 @@
+- Add in top-level Sass styles
+- Create the components for each slice in the pages
+- Add in styles for components
+- Finish dynamic story routes with content/styles
+- Finish dynamic page routes for each page of the website
+- Webhook to Vercel, consider revalidate option for pages??

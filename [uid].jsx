@@ -1,21 +1,33 @@
 import Layout from "components/Layout";
+import somecomponent from "slices/somecoponent";
 import SEO from "components/Seo";
 import { client } from "lib/prismic";
-import Primsic from "@prismicio/client";
+import Prismic from "@prismicio/client";
 
-export default function Story({ story, global }) {
+export default function Page({ page, global }) {
   return (
     <Layout data={global.body}>
       <SEO data={global} />
-      <h1>Hello</h1>
-      <pre>{JSON.stringify(story, null, 2)}</pre>
+      {page.body.map((slice) => {
+        switch (slice.slice_type) {
+          case "hero":
+            <Component />;
+            break;
+          case "section":
+            <Component2 />;
+            break;
+          default:
+            <h2>No slices found</h2>;
+            break;
+        }
+      })}
     </Layout>
   );
 }
 
 export async function getStaticPaths() {
   const { results } = await client.query(
-    Primsic.predicates.at("document.type", "story")
+    Prismic.predicates.at("document.type", "page")
   );
 
   return {
@@ -27,8 +39,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const story = await client.query(
-    Primsic.predicates.at("my.story.uid", `${params.uid}`)
+  const page = await client.query(
+    Primsic.predicates.at("my.page.uid", `${params.uid}`)
   );
 
   const settings = await client.query(
@@ -37,7 +49,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
-      story: story.results[0].data,
+      page: page.results[0].data,
       global: settings.results[0].data,
     },
   };
