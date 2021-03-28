@@ -1,0 +1,12 @@
+$base: 1rem;
+
+// Major Third Scale
+$scale: (
+  300: $base * 0.8,
+  400: $base,
+  500: $base * 1.25,
+  600: $base * 1.56,
+  700: $base * 1.95,
+  800: $base * 2.44,
+  900: $base * 3.05,
+);
