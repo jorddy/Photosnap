@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+      <meta charset="UTF-8"/>
+      <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+      <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+      <link rel="preload" as="style" href="/css/main.css" />
+      <link rel="preload" as="font" href="/fonts/roboto-400.woff2" type="font/woff2">
+      <link rel="preload" as="font" href="/fonts/roboto-700.woff2" type="font/woff2">
+      <link rel="stylesheet" href="/css/main.css" />
+      {% include "meta.njk" %}
+  </head>
+  <body>
+      {% include "header.njk" %}
+      <main id="main-content" tabindex="-1">
+          {{ content | safe }}
+      </main>
+      {% include "footer.njk" %}
+      <script src="/js/main.js" type="module" async></script>
+  </body>
+</html>

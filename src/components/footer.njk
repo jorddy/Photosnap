@@ -1,0 +1,40 @@
+{% set footerLogo = site.footer_logo.url %}
+{% set footerLogoAlt = site.footer_logo.alt %}
+{% set footerLinks = site.footer_page_links %}
+{% set footerBtnLabel = site.footer_button_label %}
+{% set copyright = site.copyright %}
+
+<footer>
+<div classname="wrapper">
+    <div classname="footer-left">
+        <aside>
+            <figure class="logo">
+                {% image footerLogo, footerLogoAlt, "100vw" %}
+            </figure>
+            {% include "social.njk" %}
+        </aside>
+        <aside>
+            <ul>
+                {% for link in footerLinks %}
+                    <li>
+                        <a href="/{{ link.footer_page_route }}">{{ link.footer_page_link }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </aside>
+    </div>
+    <div classname="footer-right">
+        <button class="btn_white">
+            {{ footerBtnLabel }}
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" 
+            focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: 
+            rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16">
+                <g fill="#626262">
+                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                </g>
+            </svg>
+        </button>
+        <p>{{ copyright }}</p>
+    </div>
+</div>
+</footer>

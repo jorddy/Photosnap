@@ -1,9 +1,8 @@
 $typography: (
   font: (
     sans: "DM Sans, sans-serif",
-  )
-  weight:
-  (
+  ),
+  weight: (
     normal: 400,
     bold: 700,
   ),
@@ -13,10 +12,11 @@ $typography: (
     loose: 1.7,
   ),
   length: (
-    short: 40ch,
-    long: 65ch,
+    compact: 30ch,
+    short: 65ch,
+    long: 85ch,
   ),
-  flow: (
-    responsive: clamp(1rem, 5vw, 1.3rem),
+  fluid: (
+    target: 5vw,
   ),
 );

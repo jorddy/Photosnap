@@ -1,0 +1,16 @@
+---
+layout: base.njk
+title: Photosnap
+---
+{% set siteImage = site.site_social_image.url %}
+{% set siteImageAlt = site.site_social_image.alt %}
+  
+<h1>This is the home page</h1>
+{% image siteImage, siteImageAlt, "100vw" %}
+<ul>
+  {% for story in stories %}
+    <li>
+      <a href="/stories/{{ story.uid }}">{{ story.data.title[0].text }}</a>
+    </li>
+  {% endfor %}
+</ul>

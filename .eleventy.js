@@ -44,14 +44,14 @@ module.exports = function (config) {
 
   return {
     passthroughFileCopy: true,
-    htmlTemplateEngine: "11ty.js",
-    markdownTemplateEngine: "11ty.js",
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
 
     dir: {
-      input: "src/layouts",
+      input: "src/pages",
       output: "dist",
       includes: "../components",
-      layouts: "layouts",
+      layouts: "../layouts",
       data: "../data",
     },
   };

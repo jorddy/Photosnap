@@ -1,0 +1,7 @@
+.flow {
+  --flow-space: var(--size-400);
+}
+
+.flow + * > * {
+  margin-top: var(--flow-space, 1rem);
+}

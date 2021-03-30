@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+:root {
+  @each $colour, $shades in $colours {
+    @each $shade, $value in $shades {
+      --clr-#{$colour}-#{$shade}: #{$value};
+    }
+  }
+
+  @each $type, $props in $typography {
+    @each $prop, $value in $props {
+      --type-#{$type}-#{$prop}: #{$value};
+    }
+  }
+
+  @each $size, $value in $scale {
+    --size-#{$size}: #{$value};
+  }
+}

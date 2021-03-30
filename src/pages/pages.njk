@@ -1,0 +1,47 @@
+---
+layout: base.njk
+pagination:
+  data: pages
+  size: 1
+  alias: content
+  addAllPagesToCollections: true
+permalink: /{{ content.uid }}/index.html
+eleventyComputed:
+  title: {{ content.data.name }}
+---
+
+<h1>You are on {{ content.data.name }}</h1>
+
+{% for slice in content.data.body %}
+  {% switch slice.slice_type %}
+    {% case "hero" %}
+      <h2>This is the hero slice component rendered on screen</h2>
+
+    {% case "section" %}
+      <h2>This is the section slice component rendered on screen</h2>
+
+    {% case "story_collection" %}
+      <h2>This is the story collection slice component rendered on screen</h2>
+
+    {% case "featured_story" %}
+      <h2>This is the featured story slice component rendered on screen</h2>
+
+    {% case "stories" %}
+      <h2>This is the stories slice component rendered on screen</h2>
+
+    {% case "product_features" %}
+      <h2>This is the product features slice component rendered on screen</h2>
+
+    {% case "pricing_table" %}
+      <h2>This is the pricing table slice component rendered on screen</h2>
+
+    {% case "pricing_plans" %}
+      <h2>This is the pricing plans slice component rendered on screen</h2>
+
+    {% case "informational_block" %}
+      <h2>This is the informational block slice component rendered on screen</h2>
+
+    {% default %}
+    <h2>No slices to display</h2>
+  {% endswitch %}
+{% endfor %}

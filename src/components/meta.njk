@@ -1,0 +1,43 @@
+{% set pageTitle = title + "  |  " + site.site_title %}
+{% set siteTitle = site.site_title %}
+{% set currentUrl = site.site_link.url + page.url %}
+{% set socialImg = site.site_social_image.url %}
+{% set metaDesc = site.site_description %}
+
+{% if title == siteTitle %}
+  {% set pageTitle = siteTitle %}
+{% endif %}
+
+{% if not title %}
+  {% set pageTitle = siteTitle %}
+{% endif %}
+
+{% if description %}
+  {% set metaDesc = description %}
+{% endif %}
+
+{% if socialImage %}
+  {% set socialImg = socialImage %}
+{% endif %}
+
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}"/>
+<meta property="og:site_name" content="{{ siteTitle }}"/>
+<meta property="og:title" content="{{ pageTitle }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ currentUrl }}"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta property="og:image" content="{{ socialImg }}"/>
+<meta name="twitter:image" content="{{ socialImg }}"/>
+<meta content="Page image for {{ siteTitle }}" property="og:image:alt"/>
+<meta content="Page image for {{ siteTitle }}" name="twitter:image:alt"/>
+<meta name="description" content="{{ metaDesc }}"/>
+<meta name="twitter:description" content="{{ metaDesc }}"/>
+<meta property="og:description" content="{{ metaDesc }}"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<link color="#000000" href="/safari-pinned-tab.svg" rel="mask-icon"/>
+<meta content="#000000" name="msapplication-TileColor"/>
+<meta content="#ffffff" name="theme-color"/>

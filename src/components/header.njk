@@ -1,0 +1,23 @@
+{% set headerLogo = site.header_logo.url %}
+{% set headerLogoAlt = site.header_logo.alt %}
+{% set headerLinks = site.header_page_links %}
+{% set headerBtnLabel = site.header_button_label %}
+
+<header classname="navbar">
+  <div classname="wrapper">
+    <figure class="logo">
+      {% image headerLogo, headerLogoAlt, "100vw" %}
+    </figure>
+      <ul>
+          {% for link in headerLinks %}
+            <li>
+              <a href="/{{ link.header_page_route }}">{{ link.header_page_link }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+      <button class="btn_main">{{ headerBtnLabel }}</button>
+      <button class="btn_clear" id="mob-menu-btn">
+          FIGURE OUT A WAY TO RENDER THE MENU SVGS
+      </button>
+  </div>
+</header>

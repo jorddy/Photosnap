@@ -1,9 +1,4 @@
-- Create content directories
-- Add in content in markdown files
-- Create top-level Sass styles and variables
-- Create home page
-- Create stories page
-- Create features page
-- Create pricing page
+- Complete website markup
+- Complete website styling
 - Setup some intersection observer animations
 - Deploy to Netlify

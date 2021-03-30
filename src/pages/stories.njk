@@ -1,0 +1,14 @@
+---
+layout: base.njk
+pagination:
+  data: stories
+  size: 1
+  alias: story
+  addAllPagesToCollections: true
+permalink: /stories/{{ story.uid }}/index.html
+eleventyComputed:
+  title: {{ story.data.meta_title }}
+---
+
+{{ story.data.title | prismicHTML | safe }}
+

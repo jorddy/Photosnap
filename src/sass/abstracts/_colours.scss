@@ -1,7 +1,21 @@
 $colours: (
-  main-accent:
-    linear-gradient(rgb(255, 197, 147), rgb(188, 113, 152), rgb(90, 119, 255)),
-  pure-black: #000,
-  light-grey: #dfdfdf,
-  pure-white: #fff,
+  primary: (
+    400: rgb(255, 197, 147),
+  ),
+  secondary: (
+    400: rgb(188, 113, 152),
+  ),
+  tertiary: (
+    400: rgb(90, 119, 255),
+  ),
+  accent: (
+    gradient:
+      linear-gradient(rgb(255, 197, 147), rgb(188, 113, 152), rgb(90, 119, 255)),
+  ),
+  neutral: (
+    light: #ffffff,
+    base: #dfdfdf,
+    dark: #181818,
+    contrast: #ffdd3c,
+  ),
 );

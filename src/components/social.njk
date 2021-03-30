@@ -1,0 +1,11 @@
+{% set socialLinks = site.footer_social %}
+
+<ul>
+  {% for link in socialLinks %}
+    <li>
+      <a href="{{ link.social_link.url }}" target="_blank" rel="nofollow norefferer">
+        {{ link.social_platform }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
